@@ -41,6 +41,11 @@ public class ScrollingButtonsView: UIView {
         collectionView
     }
     
+    public convenience init(buttons: [UIButton]) {
+        self.init(frame: .zero)
+        _buttons = buttons.map { .init(button: $0) }
+    }
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
